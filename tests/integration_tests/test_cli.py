@@ -4,7 +4,7 @@ import pytest
 from main import main
 
 
-def test_cli_runs_successfully(tmp_csv_files, sample_report_registry, capsys):
+def test_cli_runs_successfully(tmp_csv_files, capsys):
     sys.argv = ["main.py", "--files"] + [str(f) for f in tmp_csv_files] + ["--report", "median_coffee"]
 
     main()
@@ -18,9 +18,9 @@ def test_cli_runs_successfully(tmp_csv_files, sample_report_registry, capsys):
     assert "Студентов Петр" in output
 
 
-    assert "250" in output
-    assert "400" in output
-    assert "600" in output
+    assert "300" in output
+    assert "200" in output
+    assert "125" in output
 
 
 def test_cli_unknown_report_raises(tmp_csv_files, capsys):

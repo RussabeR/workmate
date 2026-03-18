@@ -9,9 +9,7 @@ class MedianCoffeeReport(BaseReport):
 
     def calculate(self, data: dict[str, list[int]]) -> list[tuple[str, float]]:
         result = [
-            (student, median(values))
-            for student, values in data.items()
-            if values
+            (student, median(values)) for student, values in data.items() if values
         ]
 
         return sorted(result, key=lambda x: x[1], reverse=True)

@@ -5,18 +5,20 @@ from main import main
 
 
 def test_cli_runs_successfully(tmp_csv_files, capsys):
-    sys.argv = ["main.py", "--files"] + [str(f) for f in tmp_csv_files] + ["--report", "median_coffee"]
+    sys.argv = (
+        ["main.py", "--files"]
+        + [str(f) for f in tmp_csv_files]
+        + ["--report", "median_coffee"]
+    )
 
     main()
 
     captured = capsys.readouterr()
     output = captured.out
 
-
     assert "Иванов Сергей" in output
     assert "Тестова Анна" in output
     assert "Студентов Петр" in output
-
 
     assert "300" in output
     assert "200" in output
@@ -24,7 +26,13 @@ def test_cli_runs_successfully(tmp_csv_files, capsys):
 
 
 def test_cli_unknown_report_raises(tmp_csv_files, capsys):
-    sys.argv = ["main.py", "--files", str(tmp_csv_files[0]), "--report", "unknown_report"]
+    sys.argv = [
+        "main.py",
+        "--files",
+        str(tmp_csv_files[0]),
+        "--report",
+        "unknown_report",
+    ]
 
     with pytest.raises(SystemExit) as exc:
         main()

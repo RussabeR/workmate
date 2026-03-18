@@ -1,6 +1,5 @@
 import pytest
 
-from src.reports.base import BaseReport
 
 
 @pytest.fixture
@@ -16,6 +15,3 @@ def tmp_csv_files(tmp_path):
         f.write_text(content, encoding="utf-8")
         files.append(f)
     return files
-
-
-

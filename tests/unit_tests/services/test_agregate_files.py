@@ -2,10 +2,11 @@ from collections import defaultdict
 from unittest.mock import patch
 from src.services.aggregator import aggregate_files
 
+
 def test_aggregate_files_unit():
     fake_file_data = [
         [("Иванов Сергей", 100), ("Петров Алексей", 200)],
-        [("Иванов Сергей", 150), ("Смирнова Анна", 300)]
+        [("Иванов Сергей", 150), ("Смирнова Анна", 300)],
     ]
 
     with patch("src.services.aggregator.read_file", side_effect=fake_file_data):

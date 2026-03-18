@@ -4,8 +4,10 @@ from src.reports.base import BaseReport
 from src.services.aggregator import aggregate_files
 from src.exceptions import ReportNotFoundError, FileMissingError
 
+
 def normalize_report_name(name: str) -> str:
     return name.lower()
+
 
 def run(files: list[str], report_name: str):
     for file_path in files:
@@ -20,7 +22,6 @@ def run(files: list[str], report_name: str):
         )
 
     data = aggregate_files(files)
-
 
     report_cls = BaseReport.registry[report_name_norm]()
     result = report_cls.calculate(data)

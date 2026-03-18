@@ -6,11 +6,11 @@ _______________Запуск__________________
 - uv -sync
 далее переходим внутрь виртуального окружения
 
-- python main.py --files math.csv physics.csv --report median_coffee
+- python main.py --files math.csv physics.csv programming.csv --report median_coffee
 
 аналогично можно запустить используя uv:
 
-- uv run python main.py --files math.csv physics.csv --report median_coffee
+- python main.py --files math.csv physics.csv programming.csv --report median_coffee
 
 
 ___________ Пример вывода_____________

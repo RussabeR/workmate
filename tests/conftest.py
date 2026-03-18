@@ -19,14 +19,3 @@ def tmp_csv_files(tmp_path):
 
 
 
-@pytest.fixture
-def sample_report_registry():
-    class FakeReport(BaseReport):
-        def calculate(self, data):
-            return [(student, sum(grades)) for student, grades in data.items()]
-        def name(self):
-            return "median_coffee"
-
-    BaseReport.registry.clear()
-    BaseReport.registry["median_coffee"] = FakeReport
-    return BaseReport.registry

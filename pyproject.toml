@@ -1,0 +1,10 @@
+[project]
+name = "workmate"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "argparse>=1.4.0",
+    "pytest>=9.0.2",
+    "tabulate>=0.10.0",
+]

@@ -3,7 +3,7 @@ _______________ Запуск __________________
 Используем uv для зависимостей
 
 внутри корневой папки:
-- uv -sync
+- uv sync
 далее переходим внутрь виртуального окружения
 
 - python main.py --files math.csv physics.csv programming.csv --report median_coffee
@@ -59,6 +59,8 @@ ______________ Запуск тестов ______________________
 
 <img width="1357" height="348" alt="{0A3676FD-BED5-496B-965F-6D92A3E6F532}" src="https://github.com/user-attachments/assets/7ca30c6e-884f-444d-b22d-49244fd2fc96" />
 
+
+убедиться лично - pytest --cov=src tests 
 
 
 _______ Особенности реализации ___________

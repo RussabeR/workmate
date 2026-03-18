@@ -2,20 +2,20 @@ _______________ Запуск __________________
 
 Используем uv для зависимостей
 
-внутри корневой папки:
+внутри корневой папки workmate:
 - uv sync
-далее переходим внутрь виртуального окружения
-
+далее переходим внутрь виртуального окружения:
+- source .venv/bin/activate (
 - python main.py --files math.csv physics.csv programming.csv --report median_coffee
 
 аналогично можно запустить используя uv:
 
-- python main.py --files math.csv physics.csv programming.csv --report median_coffee
+- uv run python main.py --files math.csv physics.csv programming.csv --report median_coffee
 
 
 ___________ Пример вывода _____________
 <img width="970" height="656" alt="{D24EAEE9-F61B-4BC8-B84D-0E91A75EF8E6}" src="https://github.com/user-attachments/assets/a713645f-58b2-45dc-b2aa-f8792f475b7c" />
-можно задавать разное колличество файлов
+можно задавать разное количество файлов
 
 <img width="810" height="671" alt="{6281B312-7EA1-470C-95D7-4DBF36A5DA93}" src="https://github.com/user-attachments/assets/7e9d783a-ba57-41e1-93e5-a05e67c1f938" />
 
@@ -67,6 +67,6 @@ _______ Особенности реализации ___________
 
 Используется только стандартная библиотека (argparse, csv, statistics)
 
-поддержка параллельного чтения файлов
+Поддержка параллельного чтения файлов
 
 чистое разделение слоёв (services / reports / app)
